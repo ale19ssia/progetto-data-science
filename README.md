@@ -34,6 +34,9 @@ Predire se un cliente abbandonerà il servizio (`Churn`), individuando i fattori
 /
 ├── data/           # dataset e descrizione campi
 ├── notebooks/      # notebook di analisi (Jupyter/Colab)
+│   ├── 01_setup_e_comprensione_dataset.ipynb   # Fase 1-2
+│   ├── 02_analisi_esplorativa.ipynb            # Fase 3
+│   └── 03_modellazione_e_valutazione.ipynb     # Fase 4-5
 ├── figures/        # grafici esportati
 ├── report/         # relazione LaTeX/Overleaf (sorgenti + PDF finale)
 └── README.md
@@ -41,19 +44,21 @@ Predire se un cliente abbandonerà il servizio (`Churn`), individuando i fattori
 
 ## Istruzioni per l'esecuzione
 
-1. Aprire `notebooks/01_setup_e_comprensione_dataset.ipynb` (Google Colab o Jupyter locale)
+1. Aprire i notebook in `notebooks/` in ordine (Google Colab o Jupyter locale)
 2. Installare le dipendenze: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
-3. Il notebook carica il dataset da `../data/Customer_Churn.csv`
+3. Ogni notebook carica il dataset da `../data/Customer_Churn.csv`
 4. Eseguire le celle in ordine
 
 ## Uso di assistenti LLM
 
-*[Da compilare: indicare dove e come sono stati eventualmente usati assistenti LLM nel progetto]*
+Il progetto è stato realizzato con il supporto di un assistente LLM (Claude) come aiuto alla programmazione: scrittura e formattazione del codice, spiegazione dei concetti statistici e di machine learning utilizzati. Ogni ipotesi, ogni scelta di analisi e ogni interpretazione dei risultati presente nei notebook è stata discussa e compresa dal team prima di essere inclusa.
+
+Una prima versione del progetto (Fasi 2-5) era stata realizzata con un altro assistente (ChatGPT) senza un'adeguata comprensione da parte del team dei passaggi svolti. È stata quindi rifatta da zero a partire dalla Fase 2, questa volta con un percorso guidato in cui ogni scelta viene spiegata e verificata.
 
 ## Stato del progetto
 
 - [x] Fase 1 — Setup del progetto e del repository
-- [ ] Fase 2 — Descrizione e comprensione del dataset
+- [x] Fase 2 — Descrizione e comprensione del dataset
 - [ ] Fase 3 — Analisi esplorativa e visualizzazione
 - [ ] Fase 4 — Modellazione
 - [ ] Fase 5 — Valutazione e interpretazione dei risultati
