@@ -24,6 +24,8 @@ Il dataset (`data/Customer_Churn.csv`, 7043 righe, 21 colonne) contiene informaz
 
 Descrizione completa dei campi in `data/Customer_Churn_description.txt`.
 
+Nota: la colonna `TotalCharges` viene fornita come testo e contiene 11 valori vuoti, tutti corrispondenti a clienti con `tenure = 0` (appena iscritti, non ancora fatturati) — vedi dettagli nel notebook di Fase 2.
+
 ## Obiettivo
 
 Predire se un cliente abbandonerà il servizio (`Churn`), individuando i fattori più associati all'abbandono.
@@ -49,6 +51,20 @@ Predire se un cliente abbandonerà il servizio (`Churn`), individuando i fattori
 3. Ogni notebook carica il dataset da `../data/Customer_Churn.csv`
 4. Eseguire le celle in ordine
 
+## Riepilogo dei risultati (Fase 4-5)
+
+Modelli addestrati su split stratificato 75/25, con `class_weight="balanced"` per Regressione Logistica e Random Forest:
+
+| Modello | Accuracy | Precision (Churn) | Recall (Churn) | F1-score |
+|---|---|---|---|---|
+| Regressione Logistica | 0.750 | 0.519 | 0.797 | 0.628 |
+| k-NN | 0.752 | 0.534 | 0.516 | 0.525 |
+| Random Forest | 0.792 | 0.644 | 0.484 | 0.553 |
+
+La Random Forest ha l'accuracy più alta, ma la Regressione Logistica ottiene la recall più alta sulla classe Churn — la metrica più rilevante in questo contesto, perché individuare i clienti a rischio è l'obiettivo pratico principale.
+
+Fattori più associati al churn (coerenti tra Random Forest e Regressione Logistica): tipo di contratto (in particolare il contratto biennale, fortemente associato alla permanenza), tenure, metodo di pagamento (electronic check).
+
 ## Uso di assistenti LLM
 
 Il progetto è stato realizzato con il supporto di un assistente LLM (Claude) come aiuto alla programmazione: scrittura e formattazione del codice, spiegazione dei concetti statistici e di machine learning utilizzati. Ogni ipotesi, ogni scelta di analisi e ogni interpretazione dei risultati presente nei notebook è stata discussa e compresa dal team prima di essere inclusa.
@@ -59,7 +75,7 @@ Una prima versione del progetto (Fasi 2-5) era stata realizzata con un altro ass
 
 - [x] Fase 1 — Setup del progetto e del repository
 - [x] Fase 2 — Descrizione e comprensione del dataset
-- [ ] Fase 3 — Analisi esplorativa e visualizzazione
-- [ ] Fase 4 — Modellazione
-- [ ] Fase 5 — Valutazione e interpretazione dei risultati
+- [x] Fase 3 — Analisi esplorativa e visualizzazione
+- [x] Fase 4 — Modellazione
+- [x] Fase 5 — Valutazione e interpretazione dei risultati
 - [ ] Fase 6 — Report scientifico in LaTeX
