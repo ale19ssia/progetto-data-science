@@ -4,7 +4,7 @@ Progetto di gruppo per il corso *Introduzione al Pensiero Computazionale e alla 
 
 ## Team
 
-- Alessia (alessia99deluca@gmail.com)
+- Alessia De Luca — alessia.delca4@studio.unibo.it — matricola 0001183061
 - Michelle
 
 Numero team: *[inserire numero registrazione dal foglio Google del docente]*
@@ -40,7 +40,7 @@ Predire se un cliente abbandonerà il servizio (`Churn`), individuando i fattori
 │   ├── 02_analisi_esplorativa.ipynb            # Fase 3
 │   └── 03_modellazione_e_valutazione.ipynb     # Fase 4-5
 ├── figures/        # grafici esportati
-├── report/         # relazione LaTeX/Overleaf (sorgenti + PDF finale)
+├── report/         # relazione LaTeX (sorgente .tex, cartella images/, PDF finale)
 └── README.md
 ```
 
@@ -78,4 +78,4 @@ Una prima versione del progetto (Fasi 2-5) era stata realizzata con un altro ass
 - [x] Fase 3 — Analisi esplorativa e visualizzazione
 - [x] Fase 4 — Modellazione
 - [x] Fase 5 — Valutazione e interpretazione dei risultati
-- [ ] Fase 6 — Report scientifico in LaTeX
+- [x] Fase 6 — Report scientifico in LaTeX (`report/relazione.pdf`, sorgente in `report/relazione.tex`)
