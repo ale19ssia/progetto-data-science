@@ -36,19 +36,17 @@ Predire se un cliente abbandonerà il servizio (`Churn`), individuando i fattori
 /
 ├── data/           # dataset e descrizione campi
 ├── notebooks/      # notebook di analisi (Jupyter/Colab)
-│   ├── 01_setup_e_comprensione_dataset.ipynb   # Fase 1-2
-│   ├── 02_analisi_esplorativa.ipynb            # Fase 3
-│   └── 03_modellazione_e_valutazione.ipynb     # Fase 4-5
+│   └── Progetto_Alessia_Michelle.ipynb   # Fasi 1-5 (setup, comprensione dataset, EDA, modellazione, valutazione)
 ├── figures/        # grafici esportati
-├── report/         # relazione LaTeX (sorgente .tex, cartella images/, PDF finale)
+├── report/         # relazione LaTeX (sorgente .tex, cartella images/, PDF finale) — Fase 6
 └── README.md
 ```
 
 ## Istruzioni per l'esecuzione
 
-1. Aprire i notebook in `notebooks/` in ordine (Google Colab o Jupyter locale)
+1. Aprire `notebooks/Progetto_Alessia_Michelle.ipynb` (Google Colab o Jupyter locale)
 2. Installare le dipendenze: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
-3. Ogni notebook carica il dataset da `../data/Customer_Churn.csv`
+3. Il notebook carica il dataset da `../data/Customer_Churn.csv`
 4. Eseguire le celle in ordine
 
 ## Riepilogo dei risultati (Fase 4-5)
