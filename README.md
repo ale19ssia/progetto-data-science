@@ -61,7 +61,7 @@ Modelli addestrati su split stratificato 75/25, con `class_weight="balanced"` pe
 
 La Random Forest ha l'accuracy più alta, ma la Regressione Logistica ottiene la recall più alta sulla classe Churn — la metrica più rilevante in questo contesto, perché individuare i clienti a rischio è l'obiettivo pratico principale.
 
-Fattori più associati al churn (coerenti tra Random Forest e Regressione Logistica): tipo di contratto (in particolare il contratto biennale, fortemente associato alla permanenza), tenure, metodo di pagamento (electronic check).
+Fattori più associati al churn: secondo la feature importance della Random Forest, le variabili più rilevanti sono TotalCharges, tenure e MonthlyCharges (tra loro collineari), seguite dal tipo di contratto (il contratto biennale è la quarta feature per importanza ed è tra i coefficienti più protettivi nella Regressione Logistica). Il coefficiente positivo più forte nella Regressione Logistica è invece InternetService_Fiber optic: i clienti con fibra ottica abbandonano molto più spesso (41.9% contro 19.0% DSL e 7.4% senza internet). Anche il metodo di pagamento (electronic check, 45.3% di churn) è associato all'abbandono.
 
 ## Uso di assistenti LLM
 

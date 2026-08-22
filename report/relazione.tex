@@ -86,6 +86,7 @@ Dato lo squilibrio delle classi, l'accuratezza da sola non \`e una metrica suffi
 \section{Risultati}
 
 \subsection{Analisi esplorativa}
+\label{sec:eda}
 
 L'analisi esplorativa ha permesso di verificare diverse ipotesi formulate durante la fase di comprensione del dataset. Il fattore pi\`u fortemente associato all'abbandono \`e risultato il tipo di contratto (Figura~\ref{fig:contract}): i clienti con contratto mensile abbandonano nel 42.7\% dei casi, contro l'11.3\% dei contratti annuali e il 2.8\% dei contratti biennali. Anche l'anzianit\`a del cliente (\texttt{tenure}) mostra una relazione marcata con l'abbandono: i clienti che abbandonano hanno una permanenza mediana di 10 mesi, contro i 38 mesi circa di chi resta cliente.
 
@@ -103,6 +104,24 @@ L'analisi esplorativa ha permesso di verificare diverse ipotesi formulate durant
     \includegraphics[width=0.55\textwidth]{images/correlation_heatmap.png}
     \caption{Matrice di correlazione tra le variabili numeriche.}
     \label{fig:corr}
+\end{figure}
+
+Un'ulteriore ipotesi verificata riguarda il tipo di connessione internet (Figura~\ref{fig:internet}): i clienti con fibra ottica abbandonano nel 41.9\% dei casi, contro il 19.0\% dei clienti con connessione DSL e il 7.4\% di chi non ha internet. Si tratta del secondo fattore per intensit\`a dell'effetto dopo il tipo di contratto, coerentemente con il coefficiente pi\`u positivo osservato nella Regressione Logistica (Sezione~\ref{sec:importance}).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/churn_by_internet.png}
+    \caption{Tasso di abbandono (\%) per tipo di connessione internet.}
+    \label{fig:internet}
+\end{figure}
+
+Infine, anche il metodo di pagamento mostra un'associazione con l'abbandono (Figura~\ref{fig:payment}): i clienti che pagano tramite \texttt{Electronic check} abbandonano nel 45.3\% dei casi, contro percentuali inferiori al 20\% per gli altri tre metodi disponibili. Una possibile spiegazione \`e che questo metodo di pagamento, a differenza degli altri (tutti automatici e ricorrenti), non richiede alcun impegno continuativo, ed \`e quindi plausibilmente pi\`u diffuso proprio tra i clienti con contratto mensile, gi\`a identificati come il gruppo pi\`u a rischio.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/churn_by_payment.png}
+    \caption{Tasso di abbandono (\%) per metodo di pagamento.}
+    \label{fig:payment}
 \end{figure}
 
 \subsection{Confronto tra i modelli}
@@ -143,8 +162,9 @@ Le matrici di confusione dei tre modelli (Figura~\ref{fig:cm}) mostrano nel dett
 \end{figure}
 
 \subsection{Fattori pi\`u rilevanti}
+\label{sec:importance}
 
-La Figura~\ref{fig:importance} mostra le dieci variabili con maggiore \emph{feature importance} secondo la Random Forest. I risultati sono coerenti con quanto osservato nell'analisi esplorativa e con i coefficienti della Regressione Logistica: il tipo di contratto e l'anzianit\`a del cliente (\texttt{tenure}) risultano tra i fattori pi\`u influenti in entrambi i modelli, nonostante si tratti di approcci molto diversi tra loro (uno lineare, uno basato su alberi). Questa coerenza rafforza l'affidabilit\`a del risultato.
+La Figura~\ref{fig:importance} mostra le dieci variabili con maggiore \emph{feature importance} secondo la Random Forest. Le tre variabili pi\`u rilevanti sono \texttt{TotalCharges} (0.176), \texttt{tenure} (0.169) e \texttt{MonthlyCharges} (0.150), coerentemente con la collinearit\`a tra queste variabili gi\`a osservata in Sezione~\ref{sec:metodologia}. Il tipo di contratto, pur comparendo pi\`u in basso in questa classifica, resta rilevante: avere un contratto biennale (\texttt{Contract\_Two~year}) \`e la quarta feature per importanza ed \`e anche uno dei coefficienti pi\`u negativi -- quindi pi\`u protettivi -- nella Regressione Logistica. Il coefficiente positivo pi\`u forte nella Regressione Logistica \`e invece \texttt{InternetService\_Fiber~optic} (+0.78), coerente con quanto osservato nell'analisi esplorativa (Sezione~\ref{sec:eda}): i clienti con fibra ottica abbandonano molto pi\`u spesso. Il fatto che due modelli molto diversi tra loro (uno lineare, uno basato su alberi) concordino sui fattori principali rafforza l'affidabilit\`a del risultato.
 
 \begin{figure}[htbp]
     \centering
