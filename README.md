@@ -4,7 +4,7 @@ Progetto di gruppo per il corso *Introduzione al Pensiero Computazionale e alla 
 
 ## Team
 
-- Alessia De Luca — alessia.delca4@studio.unibo.it — matricola 0001183061
+- Alessia De Luca — alessia.deluca4@studio.unibo.it — matricola 0001183061
 - Michelle Canario — michelle.canario@studio.unibo.it — matricola 0001175461
 
 Numero team: 15
