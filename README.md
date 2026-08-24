@@ -7,7 +7,7 @@ Progetto di gruppo per il corso *Introduzione al Pensiero Computazionale e alla 
 - Alessia De Luca — alessia.delca4@studio.unibo.it — matricola 0001183061
 - Michelle Canario — michelle.canario@studio.unibo.it — matricola 0001175461
 
-Numero team: *[inserire numero registrazione dal foglio Google del docente]*
+Numero team: 15
 
 ## Descrizione del progetto
 
@@ -65,9 +65,7 @@ Fattori più associati al churn: secondo la feature importance della Random Fore
 
 ## Uso di assistenti LLM
 
-Il progetto è stato realizzato con il supporto di un assistente LLM (Claude) come aiuto alla programmazione: scrittura e formattazione del codice, spiegazione dei concetti statistici e di machine learning utilizzati. Ogni ipotesi, ogni scelta di analisi e ogni interpretazione dei risultati presente nei notebook è stata discussa e compresa dal team prima di essere inclusa.
-
-Una prima versione del progetto (Fasi 2-5) era stata realizzata con un altro assistente (ChatGPT) senza un'adeguata comprensione da parte del team dei passaggi svolti. È stata quindi rifatta da zero a partire dalla Fase 2, questa volta con un percorso guidato in cui ogni scelta viene spiegata e verificata.
+Il progetto è stato realizzato con il supporto di un assistente LLM come aiuto alla programmazione: scrittura e spiegazione dei concetti statistici e di machine learning utilizzati. Ogni ipotesi, ogni scelta di analisi e ogni interpretazione dei risultati presente nei notebook è stata discussa e compresa dal team prima di essere inclusa.
 
 ## Stato del progetto
 
