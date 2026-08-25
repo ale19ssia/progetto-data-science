@@ -106,7 +106,7 @@ L'analisi esplorativa ha permesso di verificare diverse ipotesi formulate durant
     \label{fig:corr}
 \end{figure}
 
-Un'ulteriore ipotesi verificata riguarda il tipo di connessione internet (Figura~\ref{fig:internet}): i clienti con fibra ottica abbandonano nel 41.9\% dei casi, contro il 19.0\% dei clienti con connessione DSL e il 7.4\% di chi non ha internet. Si tratta del secondo fattore per intensit\`a dell'effetto dopo il tipo di contratto, coerentemente con il coefficiente pi\`u positivo osservato nella Regressione Logistica (Sezione~\ref{sec:importance}).
+Un'ulteriore ipotesi verificata riguarda il tipo di connessione internet (Figura~\ref{fig:internet}): i clienti con fibra ottica abbandonano nel 41.9\% dei casi, contro il 19.0\% dei clienti con connessione DSL e il 7.4\% di chi non ha internet. La connessione in fibra ottica mostra quindi una forte associazione con il churn, seconda per entit\`a solo al tipo di contratto tra le variabili categoriche esaminate in questa sezione, coerentemente con il coefficiente pi\`u positivo osservato nella Regressione Logistica (Sezione~\ref{sec:importance}).
 
 \begin{figure}[htbp]
     \centering
@@ -115,7 +115,7 @@ Un'ulteriore ipotesi verificata riguarda il tipo di connessione internet (Figura
     \label{fig:internet}
 \end{figure}
 
-Infine, anche il metodo di pagamento mostra un'associazione con l'abbandono (Figura~\ref{fig:payment}): i clienti che pagano tramite \texttt{Electronic check} abbandonano nel 45.3\% dei casi, contro percentuali inferiori al 20\% per gli altri tre metodi disponibili. Una possibile spiegazione \`e che questo metodo di pagamento, a differenza degli altri (tutti automatici e ricorrenti), non richiede alcun impegno continuativo, ed \`e quindi plausibilmente pi\`u diffuso proprio tra i clienti con contratto mensile, gi\`a identificati come il gruppo pi\`u a rischio.
+Infine, anche il metodo di pagamento mostra un'associazione con l'abbandono (Figura~\ref{fig:payment}): i clienti che pagano tramite \texttt{Electronic check} abbandonano nel 45.3\% dei casi, contro percentuali inferiori al 20\% per gli altri tre metodi disponibili. Una possibile spiegazione \`e che questo metodo di pagamento sia pi\`u diffuso tra clienti con caratteristiche gi\`a associate al churn, come il contratto mensile; verificare questa ipotesi richiederebbe per\`o un'analisi congiunta delle due variabili, che esula dagli obiettivi di questo report.
 
 \begin{figure}[htbp]
     \centering
@@ -177,7 +177,7 @@ La Figura~\ref{fig:importance} mostra le dieci variabili con maggiore \emph{feat
 
 I risultati ottenuti evidenziano un compromesso tipico nei problemi di classificazione con classi sbilanciate: la Random Forest privilegia la precisione, mentre la Regressione Logistica, grazie al bilanciamento delle classi, privilegia la recall. Nel contesto applicativo di questo progetto -- identificare clienti a rischio di abbandono per interventi di fidelizzazione -- un falso negativo (un cliente a rischio non individuato) \`e generalmente pi\`u costoso di un falso positivo (un cliente stabile contattato per errore). Su questa base, la Regressione Logistica risulta il modello pi\`u adatto tra i tre, nonostante l'accuratezza pi\`u bassa.
 
-Dal punto di vista dell'interpretabilit\`a, la Regressione Logistica \`e anche il modello pi\`u trasparente: i suoi coefficienti indicano direttamente la direzione e l'intensit\`a dell'effetto di ciascuna variabile. La Random Forest offre comunque una misura di interpretabilit\`a tramite la feature importance, mentre il k-NN non fornisce alcuna indicazione diretta sull'importanza delle variabili.
+Dal punto di vista dell'interpretabilit\`a, la Regressione Logistica \`e anche il modello pi\`u trasparente: i suoi coefficienti indicano direttamente la direzione e l'intensit\`a dell'associazione stimata tra ciascuna variabile e la probabilit\`a di churn. La Random Forest offre comunque una misura di interpretabilit\`a tramite la feature importance, mentre il k-NN non fornisce alcuna indicazione diretta sull'importanza delle variabili.
 
 Un limite comune a tutti i modelli \`e la precisione relativamente contenuta sulla classe \texttt{Churn} (tra il 52\% e il 64\%): un'azienda che utilizzasse questi modelli per decidere quali clienti contattare dovrebbe considerare che una parte non trascurabile dei clienti segnalati come a rischio in realt\`a non abbandonerebbe. Va inoltre ricordato che la feature importance e i coefficienti stimati indicano associazioni statistiche apprese dal modello, non necessariamente relazioni di causa-effetto.
 
